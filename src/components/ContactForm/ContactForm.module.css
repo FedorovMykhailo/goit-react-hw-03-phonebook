@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  gap: 5px;
+}
+
+.formButton {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.formInput {
+  background-color: aliceblue;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.formInput:hover,
+.formInput:focus,
+.formInput:focus-within {
+  outline: 1px solid rgb(29, 177, 218);
+  border-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(29, 177, 218) 0px 0px 0px 3px;
+}
