@@ -19,7 +19,7 @@ class App extends Component {
   componentDidMount() {
     try {
       const contactsData = JSON.parse(localStorage.getItem('contacts'))
-      if (contactsData) {this.setState({ contacts: contactsData }) }
+      if (contactsData||[]) {this.setState({ contacts: contactsData }) }
     } catch (error) {
       console.log(error);
     }
