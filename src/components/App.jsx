@@ -34,7 +34,6 @@ class App extends Component {
   
   handleFormSubmit = (evt) => {
     evt.preventDefault()
-    // console.log(this.state);
     const name = evt.currentTarget.elements.name.value;
     const phone = evt.currentTarget.elements.number.value;
     if (this.state.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase()))
@@ -51,13 +50,7 @@ class App extends Component {
 
   handleFilterChange = (evt) => {
     const name = evt.currentTarget.value.toLowerCase().trim();
-    // console.log(name);
     return this.setState({"filter": name})
-    // if (name === "" ) { return this.setState({"filter":""})}
-    // return this.setState({
-    //   "filter":
-    //     this.state.contacts.filter(contact => contact.name.toLowerCase().includes(name.toLowerCase()))
-    // })
   }
 
   filterContacts = (filterValue) => {
@@ -66,14 +59,13 @@ class App extends Component {
   }
 
   handleContactDelete = (id) => {
-    // console.log(id);
     this.setState(prev => {
       return {
         "contacts": prev.contacts.filter(contact => contact.id !== id),
         }
     })
   }
-// "filter": prev.filter!=="" ? prev.filter.filter(contact => contact.id !== id):"",
+
   render() {
      return (
     <div
@@ -96,7 +88,6 @@ class App extends Component {
          <h2>Contacts</h2>
          <Filter change={this.handleFilterChange } />
          <ContactList
-          //  contacts={this.state.filter !== "" ? this.state.filter : this.state.contacts}
            contacts={this.filterContacts(this.state.filter)}
            handleDelete={this.handleContactDelete}
          />
